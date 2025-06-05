@@ -12,4 +12,7 @@ df = load_data("C:/Users/Sibraim/Downloads/Libro1.csv")
 # Crear una columna 'sales_filled' reemplazando valores NaN en 'sales' por 0
 df['sales_filled'] = df['sales'].fillna(0)
 
+# Reemplazar valores negativos en la columna 'discount' por pd.NA
+df.loc[df['discount'] < 0, 'discount'] = pd.NA
+
 print(df)
